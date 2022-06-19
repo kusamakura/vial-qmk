@@ -1,0 +1,7 @@
+BOOTLOADER = atmel-dfu # integrated
+
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+LTO_ENABLE = yes
+KEY_OVERRIDE_ENABLE = no
+RGBLIGHT_ENABLE = no
