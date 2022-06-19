@@ -1,0 +1,8 @@
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+
+# Reduce firmware size
+LTO_ENABLE = yes
+KEY_OVERRIDE_ENABLE = no
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
