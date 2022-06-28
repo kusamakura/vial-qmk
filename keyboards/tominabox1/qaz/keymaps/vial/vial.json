@@ -3,6 +3,13 @@
    "vendorId": "0x7431",
    "productId": "0x0001",
    "lighting": "none",
+   "customKeycodes": [
+      {
+         "name": "LCK_SHIFT",
+         "title": "Shift Lock: Toggles holding Shift",
+         "shortName": "LCK_SFT"
+      }
+   ],
    "matrix": {
       "rows": 6,
       "cols": 7
