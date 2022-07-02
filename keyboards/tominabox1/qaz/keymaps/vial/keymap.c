@@ -2,6 +2,10 @@
 
 enum custom_keycodes {
   LCK_SHIFT = USER00,
+  LCK_CTRL,
+  LCK_ALT,
+  LCK_CMD,
+  LCK_OFF
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -34,6 +38,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case LCK_OFF:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSFT)) {
+          unregister_mods(MOD_BIT(KC_LSFT));
+        }
+        if (get_mods() & MOD_BIT(KC_LCTL)) {
+          unregister_mods(MOD_BIT(KC_LCTL));
+        }
+        if (get_mods() & MOD_BIT(KC_LALT)) {
+          unregister_mods(MOD_BIT(KC_LALT));
+        }
+        if (get_mods() & MOD_BIT(KC_LGUI)) {
+          unregister_mods(MOD_BIT(KC_LGUI));
+        }
+      }
+      break;
     case LCK_SHIFT:
       if (record->event.pressed) {
         if (get_mods() & MOD_BIT(KC_LSFT)) {
@@ -41,6 +61,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         else {
           register_mods(MOD_BIT(KC_LSFT));
+        }
+      }
+      break;
+    case LCK_CTRL:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LCTL)) {
+          unregister_mods(MOD_BIT(KC_LCTL));
+        }
+        else {
+          register_mods(MOD_BIT(KC_LCTL));
+        }
+      }
+      break;
+    case LCK_ALT:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LALT)) {
+          unregister_mods(MOD_BIT(KC_LALT));
+        }
+        else {
+          register_mods(MOD_BIT(KC_LALT));
+        }
+      }
+      break;
+    case LCK_CMD:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LGUI)) {
+          unregister_mods(MOD_BIT(KC_LGUI));
+        }
+        else {
+          register_mods(MOD_BIT(KC_LGUI));
         }
       }
       break;
