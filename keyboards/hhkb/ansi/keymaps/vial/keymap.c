@@ -1,5 +1,8 @@
 #include QMK_KEYBOARD_H
 
+enum custom_keycodes {
+  LCK_SHIFT = USER00,
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -66,3 +69,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case LCK_SHIFT:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSFT)) {
+          unregister_mods(MOD_BIT(KC_LSFT));
+        }
+        else {
+          register_mods(MOD_BIT(KC_LSFT));
+        }
+      }
+      break;
+  }
+  return true;
+}
