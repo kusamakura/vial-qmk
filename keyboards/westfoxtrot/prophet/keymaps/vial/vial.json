@@ -7,6 +7,33 @@
     "cols": 14
   },
   "lighting": "none",
+  "customKeycodes": [
+    {
+      "name": "LCK_SHIFT",
+      "title": "Shift Lock: Toggles holding Shift",
+      "shortName": "LCK_SFT"
+    },
+    {
+      "name": "LCK_CTRL",
+      "title": "Ctrl Lock: Toggles holding Ctrl",
+      "shortName": "LCK_CTL"
+    },
+    {
+      "name": "LCK_ALT",
+      "title": "Alt Lock: Toggles holding Alt",
+      "shortName": "LCK_ALT"
+    },
+    {
+      "name": "LCK_CMD",
+      "title": "Cmd Lock: Toggles holding Cmd",
+      "shortName": "LCK_CMD"
+    },
+    {
+      "name": "LCK_OFF",
+      "title": "Clears all mod locks",
+      "shortName": "LCK_OFF"
+    }
+  ],
   "layouts": {
     "labels": [
       [
