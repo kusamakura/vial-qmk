@@ -40,18 +40,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case LCK_OFF:
       if (record->event.pressed) {
-        if (get_mods() & MOD_BIT(KC_LSFT)) {
-          unregister_mods(MOD_BIT(KC_LSFT));
-        }
-        if (get_mods() & MOD_BIT(KC_LCTL)) {
-          unregister_mods(MOD_BIT(KC_LCTL));
-        }
-        if (get_mods() & MOD_BIT(KC_LALT)) {
-          unregister_mods(MOD_BIT(KC_LALT));
-        }
-        if (get_mods() & MOD_BIT(KC_LGUI)) {
-          unregister_mods(MOD_BIT(KC_LGUI));
-        }
+        clear_mods();
       }
       break;
     case LCK_SHIFT:
